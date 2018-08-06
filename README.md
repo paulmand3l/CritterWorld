@@ -1,4 +1,4 @@
-# CritterWorld
+# AgentWorld
 
 > A Vue.js project
 

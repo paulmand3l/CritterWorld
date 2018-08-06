@@ -1,17 +1,17 @@
 <template lang="pug">
-  .critter(:style="critterStyle")
+  .agent(:style="agentStyle")
 </template>
 
 
 <script>
 export default {
-  name: "Critter",
+  name: "Agent",
   props: {
-    critter: Object
+    agent: Object
   },
   computed: {
-    body() { return this.critter.phenotype },
-    critterStyle() {
+    body() { return this.agent.phenotype },
+    agentStyle() {
       return {
         width: this.body.shape.width + 'px',
         height: this.body.shape.height + 'px',
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.critter
+.agent
   position absolute
   background-color #444444
 </style>

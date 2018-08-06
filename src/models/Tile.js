@@ -3,7 +3,10 @@ import uuid from 'uuid';
 
 import Entity from './abstract/Entity';
 
-const isItemOfType = _.curry((type, item) => item.constructor.name === type.name);
+const isItemOfType = _.curry((type, item) => {
+  if (type.name) type = type.name;
+  return item.constructor.name === type;
+});
 
 export default class Tile extends Entity {
   constructor(location, environment) {

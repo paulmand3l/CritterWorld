@@ -1,6 +1,6 @@
 import Entity from './abstract/Entity';
 
-export default class Critter extends Entity {
+export default class Agent extends Entity {
   constructor() {
     super();
 
@@ -81,8 +81,20 @@ export default class Critter extends Entity {
 
     this.relationships = [];
 
-    Critter.all[this.id] = this;
+    Agent.all[this.id] = this;
+  }
+
+  step(currentStep, environment) {
+    if (!this.birthday) {
+      this.birthday = currentStep;
+    }
+    // TODO
+  }
+
+  die() {
+    this.tile.remove(this);
+    delete Agent.all[this.id];
   }
 }
 
-Critter.all = {};
+Agent.all = {};

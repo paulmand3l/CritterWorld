@@ -11,7 +11,7 @@ export default {
   },
   computed: {
     resourceStyle() {
-      let amount = 100 * this.resource.amount / this.resource.MAX;
+      let amount = 100 * this.resource.amount / this.resource.MAX_AMOUNT;
       return {
         width: amount + '%',
         height: amount + '%',

@@ -1,5 +1,5 @@
 import Environment from './models/Environment';
-import Critter from './models/Critter';
+import Agent from './models/Agent';
 import Resource from './models/Resource'
 
 const WIDTH = 20;
@@ -15,8 +15,8 @@ export default class Game {
 
   initialize() {
     for (let i = 0; i < STARTING_AGENTS; i++) {
-      let critter = new Critter();
-      this.environment.getRandomTile().add(critter);
+      let agent = new Agent();
+      this.environment.getRandomTile().add(agent);
     }
 
     for (let i = 0; i < STARTING_RESOURCES; i++) {
@@ -31,10 +31,11 @@ export default class Game {
       res.step(currentStep, this.environment);
     });
 
-    _.forEach(Critter.all, critter => {
+    _.forEach(Agent.all, agent => {
+      agent.step(currentStep, this.environment);
       // getVisibleState
       // getPossibleActions
-      // critter.step(state, actions)
+      // agent.step(state, actions)
     });
   }
 }

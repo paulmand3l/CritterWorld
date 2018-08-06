@@ -1,11 +1,11 @@
 <template lang="pug">
 .tile
   Resource(v-for="resource in resources", :key="resource.id", :resource="resource")
-  Critter(v-for="critter in critters", :key="critter.id", :critter="critter")
+  Agent(v-for="agent in agents", :key="agent.id", :agent="agent")
 </template>
 
 <script>
-import Critter from './Critter';
+import Agent from './Agent';
 import Resource from './Resource'
 
 export default {
@@ -15,17 +15,17 @@ export default {
   },
 
   computed: {
-    critters() {
-      return this.tile.get(Critter);
+    agents() {
+      return this.tile.get('Agent');
     },
 
     resources() {
-      return this.tile.get(Resource);
+      return this.tile.get('Resource');
     }
   },
 
   components: {
-    Critter,
+    Agent,
     Resource
   }
 }
