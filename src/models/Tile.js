@@ -24,7 +24,7 @@ export default class Tile extends Entity {
   remove(payload) {
     delete payload.tile;
     if (payload.id in this.contents) {
-      delete this.contents[payload.id];
+      this.contents = _.omit(this.contents, payload.id);
       return payload.id;
     }
   }

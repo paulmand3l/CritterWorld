@@ -10,7 +10,7 @@ import TimeControls from './components/TimeControls'
 import Environment from './components/Environment'
 
 import Game from './Game'
-import Time from './Time'
+import Time from './models/Time'
 
 let time = new Time();
 let game = new Game();
