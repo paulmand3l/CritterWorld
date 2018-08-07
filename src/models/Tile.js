@@ -20,6 +20,7 @@ export default class Tile extends Entity {
 
   add(payload) {
     payload.tile = this;
+    // Need to reset contents because Vue doesn't register new object attributes
     this.contents = {...this.contents, [payload.id]: payload};
     return payload.id;
   }
@@ -27,6 +28,7 @@ export default class Tile extends Entity {
   remove(payload) {
     delete payload.tile;
     if (payload.id in this.contents) {
+      // Need to reset contents because Vue doesn't register new object attributes
       this.contents = _.omit(this.contents, payload.id);
       return payload.id;
     }
