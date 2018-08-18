@@ -1,11 +1,9 @@
 import Status from '../Status';
-import Node from '../abstract/Node';
+import Composite from './Composite';
 
-class Selector extends Node {
+class Selector extends Composite {
   constructor(...children) {
-    super();
-
-    this.children = children;
+    super(...children);
     this.indexOfLastRunningChild = undefined;
   }
 

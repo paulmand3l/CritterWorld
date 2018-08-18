@@ -11,7 +11,7 @@ const moveTowards = (destination) => {
 
   const step = () => {
     if (distance > 0) {
-      console.log("Walking to", destination);
+      console.log("Moving towards", destination);
       distance = distance - 1;
       return Status.RUNNING;
     } else {
@@ -23,7 +23,7 @@ const moveTowards = (destination) => {
   return step;
 }
 
-let openUnlockedDoor = new Action(() => console.log("Open the door"));
+let openUnlockedDoor = new Action(() => console.log("Opening the door"));
 
 let openLockedDoor = new Sequence(
   new Action(() => console.log("Unlocking the door")),
@@ -33,7 +33,7 @@ let openLockedDoor = new Sequence(
 let openDoor = new Selector(
   openUnlockedDoor,
   openLockedDoor,
-  new Action(() => console.log("Smash the door"))
+  new Action(() => console.log("Smashing the door"))
 );
 
 let getInThroughTheDoor = new Sequence(
@@ -43,6 +43,10 @@ let getInThroughTheDoor = new Sequence(
   new Action(() => console.log("Closing the door"))
 )
 
-setInterval(() => {
-  getInThroughTheDoor.step();
-}, 100);
+
+
+var status;
+
+do {
+  status = getInThroughTheDoor.step();
+} while (status !== Status.SUCCESS)

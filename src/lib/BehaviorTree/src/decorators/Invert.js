@@ -1,12 +1,7 @@
 import Status from '../Status';
-import Node from '../abstract/Node';
+import Decorator from './Decorator';
 
-class Invert extends Node {
-  constructor(child) {
-    super();
-    this.child = child;
-  }
-
+class Invert extends Decorator {
   step() {
     const status = this.child.step();
 

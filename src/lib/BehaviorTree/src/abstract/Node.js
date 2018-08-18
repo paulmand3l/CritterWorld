@@ -9,6 +9,10 @@ class Node {
   step() {
     throw new Error("Running step method of raw abstract Node.");
   }
+
+  reset() {
+    // This is for composites that track children
+  }
 }
 
 export default Node;
