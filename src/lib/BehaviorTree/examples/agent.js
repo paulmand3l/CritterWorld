@@ -14,7 +14,7 @@ import {
 // Super simple resource positioned in a 1-dimensional world
 class Resource {
   constructor() {
-    // Randomize amount and location
+    // Randomize initial amount and location
     this.amount = _.random(5, 20);
     this.location = _.random(-20, 20);
   }
