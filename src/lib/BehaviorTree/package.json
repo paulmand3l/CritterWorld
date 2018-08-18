@@ -1,0 +1,19 @@
+{
+  "name": "behaviortree",
+  "version": "1.0.0",
+  "description": "A behavior tree implementation",
+  "author": "paul.mand3l@gmail.com",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  }
+}
