@@ -7,8 +7,8 @@ class Action extends Node {
     this.action = action;
   }
 
-  step() {
-    const status = this.action();
+  step(state) {
+    const status = this.action(state);
 
     // Allow simple statements like console.log
     if (typeof status === 'undefined') {

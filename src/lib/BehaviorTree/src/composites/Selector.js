@@ -7,13 +7,13 @@ class Selector extends Composite {
     this.indexOfLastRunningChild = undefined;
   }
 
-  step() {
+  step(state) {
     let startingIndex = this.indexOfLastRunningChild || 0;
     this.indexOfLastRunningChild = undefined;
 
     for (let i = startingIndex; i < this.children.length; i++) {
       let child = this.children[i];
-      const status = child.step();
+      const status = child.step(state);
 
       switch (status) {
         case Status.SUCCESS:

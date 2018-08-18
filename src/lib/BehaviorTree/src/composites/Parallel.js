@@ -6,8 +6,8 @@ class ParallelAny extends Composite {
     super(...children);
   }
 
-  step() {
-    let results = this.children.map(child => child.step());
+  step(state) {
+    let results = this.children.map(child => child.step(state));
 
     let someSuccess = results.some(isSuccess);
     let allFailure = results.every(isFailure);
@@ -30,8 +30,8 @@ class ParallelAll extends Composite {
     super(...children);
   }
 
-  step() {
-    let results = this.children.map(child => child.step());
+  step(state) {
+    let results = this.children.map(child => child.step(state));
 
     let someFailure = results.some(isFailure);
     let allSuccess = results.every(isSuccess);

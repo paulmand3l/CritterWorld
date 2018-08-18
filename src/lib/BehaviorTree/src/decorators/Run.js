@@ -7,8 +7,8 @@ class RunUntil extends Decorator {
     this.runUntilStatus = status;
   }
 
-  step() {
-    const status = this.child.step();
+  step(state) {
+    const status = this.child.step(state);
 
     if (status === this.runUntilStatus) {
       return status;

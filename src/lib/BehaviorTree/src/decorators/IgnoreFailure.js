@@ -2,8 +2,8 @@ import Status from '../Status';
 import Decorator from './Decorator';
 
 class IgnoreFailure extends Decorator {
-  step() {
-    const status = this.child.step();
+  step(state) {
+    const status = this.child.step(state);
 
     switch (status) {
       case Status.SUCCESS:

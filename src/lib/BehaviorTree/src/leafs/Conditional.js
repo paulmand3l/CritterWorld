@@ -7,8 +7,8 @@ class Conditional extends Node {
     this.test = test;
   }
 
-  step() {
-    return this.test() ? Status.SUCCESS : Status.FAILURE;
+  step(state) {
+    return this.test(state) ? Status.SUCCESS : Status.FAILURE;
   }
 }
 

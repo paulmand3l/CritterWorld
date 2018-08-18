@@ -7,8 +7,8 @@ class Decorator extends Node {
     this.child = child;
   }
 
-  step() {
-    return this.child.step();
+  step(state) {
+    return this.child.step(state);
   }
 
   reset() {
